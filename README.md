@@ -46,34 +46,62 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 ## ПРОСТЫНЯ СО ВСЕМИ ЗАПРОСАМИ
 
 sudo apt install mysql-server
+
 mysql –version
+
 sudo mysql
+
 SHOW VARIABLES LIKE 'validate_password%';
+
 select plugin_name, plugin_status from information_schema.plugins where plugin_name like 'validate%';
+
 install plugin validate_password soname 'validate_password.so';
+
 select plugin_name, plugin_status from information_schema.plugins where plugin_name like 'validate%';
+
 SET GLOBAL validate_password_policy=LOW;
+
 FLUSH PRIVILEGES;
+
 sudo systemctl restart mysql.service
+
 CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY '!Dmitrym2024';
+
 FLUSH PRIVILEGES;
+
 GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
+
 FLUSH PRIVILEGES;
+
 SHOW GRANTS FOR 'sys_temp'@'localhost';
+
 exit
+
 mysql -u sys_temp –p
+
 ALTER USER 'sys_temp'@'localhost' IDENTIFIED WITH mysql_native_password BY '!Dmitrym2024';
+
 FLUSH PRIVILEGES;
+
 SHOW DATABASES;
+
 CREATE DATABASE sakila;
+
 FLUSH PRIVILEGES;
+
 SHOW DATABASES;
+
 exit
+
 mysql -u sys_temp -p sakila < /home/dmitrym/s-db/sakila-db/sakila-schema.sql
+
 mysql -u sys_temp -p sakila < /home/dmitrym/s-db/sakila-db/sakila-data.sql
+
 mysql -u sys_temp –p 
+
 SHOW TABLES FROM sakila;
 
+exit
 
 ### Задание 2
 Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
