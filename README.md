@@ -113,26 +113,6 @@ customer         | customer_id
 ### Решение 2
 
 ```
-Название таблицы | Название первичного ключа
-actor            |
-address          |
-category         |
-city             |
-country          |
-customer         |
-film             |
-film_actor       |
-film_category    |
-film_text        |
-inventory        |
-language         |
-payment          |
-rental           |
-staff            |
-store            |
-```
-
-```
 actor         | actor_id 
 address       | address_id 
 category      | category_id 
@@ -151,7 +131,7 @@ staff         | staff_id
 store         | store_id  
 ```
 
-
+![2-1](https://github.com/blackgult/hw12-02/blob/main/2-1.PNG)
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
