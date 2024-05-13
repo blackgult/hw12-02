@@ -125,7 +125,7 @@ film_actor       |
 film_category    |
 film_text        |
 inventory        |
-filmlanguage     |
+language         |
 payment          |
 rental           |
 staff            |
